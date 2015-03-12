@@ -1,0 +1,197 @@
+// Prevent iOS text size adjust after orientation change, without disabling user zoom
+html
+  font-size: 100%
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: 100%
+
+body
+  margin: 0
+  color: $base-color
+  background: $base-bgcolor
+  font: 400 $base-font-size $ff-base
+
+html, body
+  height: 100%
+
+// Correct 'block' display not defined in IE 8/9.
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+time,
+section,
+summary,
+blockquote
+  display: block
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+// Fallback for hidden="hidden" styling not present in IE 8/9 etc
+[hidden]
+  display: none !important
+
+// All sort of content links
+a,
+.link
+  color: $link-color
+  text-decoration: none
+
+  &:hover, &:active
+    outline: 0
+
+  &:hover, &:focus
+    color: $link-color-hover
+    text-decoration: underline
+
+  &:focus
+    outline: thin dotted #333
+    outline: 5px auto -webkit-focus-ring-color
+    outline-offset: -2px
+
+  &[disabled]
+    pointer-events: none
+
+// Common elements
+b, strong
+  font-weight: 700
+
+small
+  display: inline-block
+  font-size: 75%
+
+sub, sup
+  position: relative
+  font-size: 75%
+  line-height: 0
+  vertical-align: baseline
+
+sup
+  top: -0.5em
+
+sub
+  bottom: -0.5em
+
+hr, .hr
+  display: block
+  clear: both
+  height: 0
+  margin: 20px 0
+  border: 0
+  border-top: 1px solid #e5e5e5
+
+img
+  display: inline-block
+  max-width: 100%
+  height: auto
+  border: 0
+  vertical-align: middle
+
+p, fieldset
+  margin: 0 0 20px
+  padding: 0
+
+ul, ol
+  list-style: none
+  margin: 0
+  padding: 0
+
+dl, dt, dd
+  margin: 0
+  padding: 0
+
+// Headings
+h1, .h1
+  margin: 0
+  font: 400 22px/1.2 $ff-base
+
+h2, .h2
+  margin: 0
+  font: 400 20px/1.2 $ff-base
+
+h3, .h3
+  margin: 0
+  font: 400 18px/1.2 $ff-base
+
+h4, .h4
+  margin: 0
+  font: 400 16px/1.2 $ff-base
+
+h5, .h5
+  margin: 0
+  font: 400 14px/1.2 $ff-base
+
+h6, .h6
+  margin: 0
+  font: 400 12px/1.2 $ff-base
+
+.h1, .h2, .h3, .h4, .h5, .h6
+  display: block
+
+// Tables
+table
+  width: 100%
+  border-spacing: 0
+  border-collapse: collapse
+  background-color: transparent
+
+td, th
+  text-align: left
+  vertical-align: top
+
+
+// Form elements
+input,
+button,
+select,
+textarea
+  margin: 0
+  font-size: 100%
+  line-height: inherit
+  font-family: inherit
+  background: transparent
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"]
+  padding: 0
+  cursor: pointer
+  border: none
+  -webkit-appearance: button
+
+input[disabled],
+button[disabled]
+  cursor: default
+  opacity: .75
+
+input[type="radio"],
+input[type="checkbox"]
+  box-sizing: border-box
+  padding: 0
+  line-height: normal
+
+  &:focus
+    outline: thin dotted #333
+    outline: 5px auto -webkit-focus-ring-color
+    outline-offset: -2px
+
+button::-moz-focus-inner,
+input::-moz-focus-inner
+  padding: 0
+  border: 0
+
+textarea
+  overflow: auto
+  vertical-align: top
+
+iframe
+  border: 0

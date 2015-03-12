@@ -1,0 +1,70 @@
+// Grid System
+
+// Grid settings
+$grid-columns = 12
+$grid-gutter-width = 30px
+
+// Container settings
+$container-base-width = 1540px;
+
+// Common grid mixins
+grid-container()
+  margin-right: auto
+  margin-left:  auto
+  padding-left:  $grid-gutter-width
+  padding-right: $grid-gutter-width
+  @extend $u-cf
+  @extend $border-box
+
+grid-row($gutter = $grid-gutter-width)
+  font-size: 0
+  margin-left:  $gutter / -2
+  margin-right: $gutter / -2
+  @extend $u-cf
+  @extend $border-box
+
+grid-cols-setup($class)
+  for i in 1..$grid-columns
+    {$class}-{i}
+      @extend $col-common
+      width: (i / $grid-columns) * 100%
+
+  // offsets
+  for i in 1..$grid-columns
+    {$class}--offset-{i}
+      margin-left: (i / $grid-columns) * 100%
+
+// Generate grid system
+.container
+  max-width: $container-base-width + $grid-gutter-width * 2
+  grid-container()
+
+.row
+  grid-row()
+
+// Common styles for grid columns
+$col-common
+  position: relative
+  display: inline-block
+  min-height: 1px
+  padding-left:  ($grid-gutter-width / 2)
+  padding-right: ($grid-gutter-width / 2)
+  font-size: $base-font-size
+  vertical-align: top
+  @extend $border-box
+
+grid-cols-setup('.col')
+
+// Basic and general responsive styles
++media-max(420px)
+  .container
+    padding-left: 20px
+    padding-right: 20px
+  .row
+    margin-left: -10px
+    margin-right: -10px
+  [class*="col-"]
+    width: 100%
+    display: block
+    padding-left: 10px
+    padding-right: 10px

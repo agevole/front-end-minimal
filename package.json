@@ -1,0 +1,31 @@
+{
+  "name": "front-end-minimal",
+  "version": "0.0.1",
+  "author": "Yavorski",
+  "description": "Minimal, dead simple front end bootstrap",
+  "scripts": {
+    "clean": "gulp clean",
+    "jshint": "gulp jshint",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-jshint": "^1.9.2",
+    "gulp-minify-css": "^0.5.1",
+    "gulp-rev": "^3.0.1",
+    "gulp-stylus": "^2.0.1",
+    "gulp-uglify": "^1.1.0",
+    "gulp-usemin": "^0.3.8",
+    "imagemin-pngquant": "^4.0.0",
+    "jasmine-core": "^2.2.0",
+    "jshint-stylish": "^1.0.1",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4"
+  }
+}

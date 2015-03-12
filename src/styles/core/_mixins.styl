@@ -1,0 +1,41 @@
+// Mixin for generating utility classes
+// for example u-mb1, u-mb2 ...
+// $class      - the name of the class you want to create
+// $property   - the css property you want to apply
+// $from       - start number
+// $to         - end number
+// $step       - the step you wanna use
+// usage: note that the class is starting with "." (dot)
+// @include create-util-class(".u-mt", "margin-top", 0, 5, 10);
+// will create 5 classes starting with u-mt. with step=10
+create-util-class(class, property, frm, to, step)
+  for each, i in frm..to
+    .{class}{each}
+      if each == 0
+        {property}: 0
+      else
+        {property}: (each * step) * 1px
+
+
+// Mixin for caching the blocks with the given conditions
+media-max(num)
+  condition = 'only screen and (max-width: %s)' % num
+  @media condition
+    {block}
+
+
+media-min(num)
+  condition = 'only screen and (min-width: %s)' % num
+  @media condition
+    {block}
+
+
+media-in(num1, num2)
+  @media only screen and (max-width: max(num1, num2)) and (min-width: min(num1, num2))
+    {block}
+
+
+// ie9 helper
+ie9()
+  .ie9 &
+    {block}
